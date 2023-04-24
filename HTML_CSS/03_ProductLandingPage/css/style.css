@@ -1,0 +1,193 @@
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eee;
+  padding-top: 1em;
+}
+
+img {
+  width: 40%;
+}
+
+@media (max-width: 480px) {
+  img {
+    width: 70%;
+  }
+}
+
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style-type: none;
+  width: 10em;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  display: flex;
+  gap: 10em;
+}
+
+/* Body */
+/* Section 1 */
+body {
+  background-color: #eee;
+  font-family: "Lato", sans-serif;
+}
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 5em;
+}
+
+#banner form {
+  display: flex;
+  flex-direction: column;
+}
+
+#banner form #email {
+  margin-bottom: 1em;
+  width: 20em;
+  padding: 0.3em;
+}
+
+#banner form #submit {
+  width: 8em;
+  margin: 0 auto;
+  background-color: #f1c40f;
+  border-color: #f1c40f;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.5em;
+}
+
+/* Section 2 */
+
+#features {
+  display: block;
+  margin-top: 5em;
+}
+
+#features .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 125px;
+  width: 20vw;
+  color: darkorange;
+}
+
+.contenido {
+  display: flex;
+  justify-content: center;
+}
+
+.desc {
+  width: 40%;
+}
+
+/* Section 3 */
+
+#how-it-works {
+  display: flex;
+  justify-content: center;
+  margin-top: 5em;
+}
+
+#video {
+  height: 18em;
+  width: 30em;
+}
+
+/* Section 4 */
+
+#pricing {
+  display: flex;
+  justify-content: center;
+}
+
+ol {
+  list-style-type: none;
+  margin-right: 35px;
+}
+
+.product {
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 3px;
+  width: 15%;
+  margin: 3em;
+}
+
+.product ol li {
+  margin-bottom: 10px;
+}
+
+.product button {
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0.7em;
+  background-color: #f1c40f;
+  border: 0;
+  margin: 0.9em;
+  width: 5em;
+}
+
+.product button:hover {
+  background-color: orange;
+  transition: background-color 1s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.product .level {
+  padding: 1em;
+  text-transform: uppercase;
+  background-color: #ddd;
+  width: 100%;
+}
+
+/* Footer */
+
+footer {
+  background-color: #ddd;
+  display: block;
+  margin-left: 22%;
+  margin-right: 22%;
+}
+
+footer ul {
+  padding-top: 15px;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer ul,
+footer span {
+  margin-right: 1em;
+}
+
+footer span {
+  margin-top: 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.9em;
+  color: #444;
+}
