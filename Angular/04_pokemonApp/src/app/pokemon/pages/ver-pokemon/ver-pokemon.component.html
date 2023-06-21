@@ -1,0 +1,44 @@
+<div *ngIf="!pokemon; else divPokemon" class="alert alert-info">
+  Espere por favor...
+</div>
+
+<ng-template #divPokemon>
+  <div class="row">
+    <div class="col-12">
+      <h1>
+        Pokemon:<small> {{ pokemon.name }}</small>
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3>Foto</h3>
+      <img [src]="pokemon.sprites.front_default" class="img-thumbnail" />
+    </div>
+
+    <div class="col">
+      <h3>Información</h3>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>ID:</strong> {{ pokemon.id }}</li>
+        <li class="list-group-item">
+          <strong>Tipos: </strong>
+          <span class="col" *ngFor="let tipos of pokemon.types">
+            <span class="badge bg-info text-dark mr-1">{{
+              tipos.type.name
+            }}</span>
+          </span>
+        </li>
+        <li class="list-group-item">
+          <strong>Exp Base:</strong> {{ pokemon.base_experience }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h3>Habilidades</h3>
+  <div class="row">
+    <div class="col" *ngFor="let habilidad of pokemon.abilities">
+      <span class="badge bg-primary mr-1">{{ habilidad.ability.name }}</span>
+    </div>
+  </div>
+</ng-template>

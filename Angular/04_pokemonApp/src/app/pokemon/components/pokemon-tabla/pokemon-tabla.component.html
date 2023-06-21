@@ -1,0 +1,25 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Altura</th>
+      <th>Peso</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngIf="pokemones"
+      class="animate__animated animate__fadeIn animate__faster"
+    >
+      <td>{{ pokemones[6] }}</td>
+      <td>{{ pokemones[10] }}</td>
+      <td>{{ pokemones[4] }}</td>
+      <td>{{ pokemones[18] }}</td>
+      <td>
+        <a [routerLink]="['/pokemon', pokemones[6]]">Ver...</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

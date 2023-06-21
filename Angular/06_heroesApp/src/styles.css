@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Login Page */
+
+.login-container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.login-button {
+  margin-top: 20px;
+}
+
+/* Register Page */
+
+.register-container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.register-button {
+  margin-top: 20px;
+}
+
+/* Register & Login Page */
+
+.text-lg {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Layout Heroes Page */
+
+.spacer {
+  flex: 1 1 auto;
+}
