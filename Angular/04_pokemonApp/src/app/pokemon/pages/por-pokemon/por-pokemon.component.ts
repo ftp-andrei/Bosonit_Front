@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { Pokemon } from '../../interfaces/pokemon.interface';
+import { catchError, map } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-por-pokemon',
@@ -26,30 +28,44 @@ export class PorPokemonComponent {
   buscar(termino: string) {
     this.hayError = false;
     this.mostrarSugerencias = false;
-    this.termino = termino;
-    if (termino.trim() != '') {
-      this.pokemonService.buscarPokemon(termino.trim()).subscribe(
-        (pokemones) => {
-          const pokemon = Object.values(pokemones);
-          this.pokemones = pokemon;
-        },
-        (err) => {
-          this.hayError = true;
-          this.pokemones = [];
-        }
-      );
+    this.termino = termino.trim();
+
+    if (this.termino !== '') {
+      this.pokemonService
+        .buscarPokemon(termino)
+        .pipe(
+          map((pokemones) => Object.values(pokemones)),
+          catchError(() => {
+            this.hayError = true;
+            return of([]);
+          })
+        )
+        .subscribe((pokemones) => {
+          this.pokemones = pokemones;
+        });
     }
   }
 
   sugerencias(termino: string) {
     this.hayError = false;
-    this.termino = termino;
+    this.termino = termino.trim();
     this.mostrarSugerencias = true;
 
-    this.pokemonService.buscarPokemon(termino.trim()).subscribe(
-      (pokemones) => (this.pokemonesSugeridos = pokemones.splice(0, 5)),
-      (err) => (this.pokemonesSugeridos = [])
-    );
+    if (this.termino !== '') {
+      this.pokemonService
+        .buscarPokemon(termino)
+        .pipe(
+          map((pokemones) => pokemones.splice(0, 5)),
+          catchError(() => {
+            return of([]);
+          })
+        )
+        .subscribe((pokemones) => {
+          this.pokemonesSugeridos = pokemones;
+        });
+    } else {
+      this.pokemonesSugeridos = [];
+    }
   }
 
   buscarSugerido(termino: string) {

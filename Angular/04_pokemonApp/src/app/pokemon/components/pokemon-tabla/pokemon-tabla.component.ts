@@ -6,7 +6,7 @@ import { Pokemon } from '../../interfaces/pokemon.interface';
   templateUrl: './pokemon-tabla.component.html',
 })
 export class PokemonTablaComponent implements OnInit {
-  @Input() pokemones: Pokemon[] = [];
+  @Input() public pokemones: Pokemon[] = [];
 
   constructor() {}
 
