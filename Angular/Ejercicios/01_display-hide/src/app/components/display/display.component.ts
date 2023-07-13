@@ -20,4 +20,8 @@ export class DisplayComponent {
       this.textoBoton = 'Ocultar';
     }
   }
+
+  getClaseCSS(textoBoton: string): string {
+    return textoBoton === 'Mostrar' ? 'btn btn-primary' : 'btn btn-secondary';
+  }
 }

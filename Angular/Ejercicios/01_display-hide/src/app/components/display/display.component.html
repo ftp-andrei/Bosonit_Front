@@ -1,4 +1,4 @@
 <div class="text-center">
-    <button class="btn btn-primary" (click)="displayHide()">{{ textoBoton }}</button>
+    <button [class]="getClaseCSS(textoBoton)" (click)="displayHide()">{{ textoBoton }}</button>
     <h1 *ngIf="mostrar">Hola Mundo!</h1>
 </div>
