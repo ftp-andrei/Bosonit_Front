@@ -1,0 +1,7 @@
+
+.cuadro {
+    height: 13em; 
+    border: 3px solid rgb(52, 29, 224);
+    font-size: 1em;
+    padding: 0.75em;
+}
