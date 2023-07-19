@@ -1,0 +1,90 @@
+<div class="content">
+    <div>
+        <form [formGroup]="miFormulario" autocomplete="off">
+            <div>
+                <div class="row">
+                    <label for="user">Nombre de usuario</label>
+                    <input type="text"
+                    formControlName="nombre" id="user">
+                    <span class="form-text text-danger"
+                        *ngIf="controlarError('nombre')">
+                        {{ error }}
+                    </span>
+                </div>
+        
+                <div class="row">
+                    <label for="contrasena1">Contraseña</label>
+                    <input type="password"
+                    formControlName="password" id="contrasena1">
+                    <span class="form-text text-danger"
+                        *ngIf="controlarError('password')">
+                        {{ error }}
+                    </span>
+                </div>
+                
+                <div class="row">
+                    <label for="contrasena2">Confirmar la contraseña</label>
+                    <input type="password"
+                    formControlName="password2" id="contrasena2">
+                    <span class="form-text text-danger"
+                        *ngIf="controlarError('password2')">
+                        {{ error }}
+                    </span>
+                </div>
+        
+                <div class="row">
+                    <label for="correo">Correo</label>
+                    <input type="email"
+                    formControlName="email" id="correo">
+                    <span class="form-text text-danger"
+                        *ngIf="controlarError('email')">
+                        {{ emailErrorMsg }}
+                    </span>
+                </div>
+        
+                <div class="row">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="promociones"
+                        formControlName="promociones">
+                        <label class="form-check-label" for="promociones">
+                          Envíame ofertas promocionales
+                        </label>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <label for="pais">País</label>
+                    <select class="form-select" formControlName="pais" id="pais">
+                        <option value="" disabled>--Seleccione un país--</option>
+                        <option *ngFor="let pais of paises" [value]="pais.name.common">
+                          {{ pais.name.common }}
+                        </option>
+                      </select>
+                      
+                </div>
+        
+                <div class="row">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text"
+                    formControlName="ciudad" id="ciudad">
+                    <span class="form-text text-danger"
+                        *ngIf="controlarError('ciudad')">
+                        {{ error }}
+                    </span>
+                </div>
+                <button class="btn btn-primary float-end"
+                        type="button"
+                        (click)="guardar()"
+                        [disabled]="!miFormulario.valid">
+                    {{ sw ? 'Crear' : 'Actualizar'}}
+                </button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <!-- Para separar -->
+    </div>
+    <div>
+        <app-table [persona]="persona" (eventEmitter)="filaSeleccionada($event)"></app-table> 
+    </div>
+</div>

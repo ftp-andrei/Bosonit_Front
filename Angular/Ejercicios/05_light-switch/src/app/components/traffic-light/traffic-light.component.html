@@ -1,0 +1,10 @@
+<div class="semaforo">
+    <div *ngFor="let luz of luces" [class]="luz.class"></div>
+</div>
+  
+<label class="switch">
+  <input type="checkbox" (click)="turnOn()" />
+  <span class="slider round"></span>
+</label>
+  
+<app-controls [powerOn]="estaEncendido" (onColorEmitted)="recibeColor($event)" />

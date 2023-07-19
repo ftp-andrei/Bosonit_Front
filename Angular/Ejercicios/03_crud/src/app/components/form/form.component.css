@@ -1,0 +1,18 @@
+label {
+    font-size: 18px;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 330px 50px 1000px;
+    height: 100vh;
+    margin: 20px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.form-check-label {
+    font-size: 15px;
+}

@@ -1,0 +1,7 @@
+.colores select {
+    width: 120px;
+    padding: 10px;
+    display: flex;
+    margin: 0 auto;
+    border-color: #cecece;
+}
