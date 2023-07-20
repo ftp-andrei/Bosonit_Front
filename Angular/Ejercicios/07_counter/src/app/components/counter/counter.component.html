@@ -1,0 +1,26 @@
+<div class="center">
+    <div>
+        <h1 class="mb-3">{{ counter }}</h1>
+    </div>
+    <div class="controles">
+        <form [formGroup]="form" autocomplete="off">
+            <p class="mb-1">Setup</p>
+            <input type="number" class="form-control" id="stepTo" formControlName="stepTo"/>
+            <p class="mb-1 mt-3">Step</p>
+            <input type="number" class="form-control" id="step" formControlName="step"/>
+        </form>
+        <p class="mb-1 mt-3">Count</p>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-success me-1" id="countUp">count up</button>
+            <button class="btn btn-primary me-1" id="countDown">count down</button>
+        </div>
+        <p class="mb-1 mt-3">Setup</p>
+        <div class="d-flex justify-content-between">
+            <button class="btn btn-success me-1" id="start">start</button>
+            <button class="btn btn-warning me-1" id="pause">pause</button>
+            <button class="btn btn-danger me-1" id="reset">reset</button>
+        </div>
+    </div>
+</div>
+
+
